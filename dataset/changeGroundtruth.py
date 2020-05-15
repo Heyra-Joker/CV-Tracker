@@ -171,5 +171,5 @@ class ChangeGround:
 
 
 if __name__ == '__main__':
-    change_ground = ChangeGround("basketball", isShow=False, imageDir="basketballImgs")
+    change_ground = ChangeGround("basketball", isShow=True, imageDir="basketballImgs")
     change_ground.change()
