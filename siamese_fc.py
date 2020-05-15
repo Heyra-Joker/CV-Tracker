@@ -53,4 +53,4 @@ class SiameseFC:
 
 if __name__ == '__main__':
     siameseFC = SiameseFC(epoch=10, batchSize=8)
-    siameseFC.train(lr=0.01)
+    siameseFC.train(lr=0.001)
