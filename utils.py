@@ -51,7 +51,7 @@ def constructGtScoreMaps(response_size, stride):
         # dist_to_center = tf.sqrt(tf.square(X) + tf.square(Y))  # L2 metric
         dist_to_center = tf.abs(X) + tf.abs(Y)  # Block metric
         yu = tf.where(dist_to_center <= rPos, tf.ones_like(X),
-                     tf.where(dist_to_center < rNeg, 0.5 * tf.ones_like(X), tf.ones_like(X) * -1))
+                     tf.where(dist_to_center < rNeg, 0.5 * tf.ones_like(X), tf.zeros_like(X)))
         return yu
 
     def get_center(x):
