@@ -49,9 +49,9 @@ class SiameseFC:
                                                               update_freq=100,
                                                               profile_batch=0)
         self.model.fit(x=recorder, callbacks=[tensorboard_callback], epochs=self.epoch)
-        self.model.save(MODEL_SAVE_DIR, save_format="tf")
+        tf.saved_model.save(self.model, MODEL_SAVE_DIR)
         print('export saved model.')
 
 if __name__ == '__main__':
-    siameseFC = SiameseFC(epoch=10, batchSize=8)
+    siameseFC = SiameseFC(epoch=2, batchSize=8)
     siameseFC.train(lr=0.001)
