@@ -48,8 +48,9 @@ class SiameseFC:
         tensorboard_callback = tf.keras.callbacks.TensorBoard(TENSORBOARD_DIR, histogram_freq=1,
                                                               update_freq=100,
                                                               profile_batch=0)
-        self.model.fit(x=recorder, callbacks=[tensorboard_callback])
-
+        self.model.fit(x=recorder, callbacks=[tensorboard_callback], epochs=self.epoch)
+        self.model.save(MODEL_SAVE_DIR, save_format="tf")
+        print('export saved model.')
 
 if __name__ == '__main__':
     siameseFC = SiameseFC(epoch=10, batchSize=8)

@@ -31,6 +31,9 @@ ALEXNET_WEIGHTS_PATH = "./weights/bvlc_alexnet.npy"
 # Tensorboard Dir
 TENSORBOARD_DIR = os.path.join(CURRENT_DIR, "model_logs", datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
 
+# Model Save Dir
+MODEL_SAVE_DIR = './save_models/siamese_model'
+
 # get GT Config, 超参数
 RPos = 16  # Manhattan positive
 RNeg = 0 # Manhattan negtive.
