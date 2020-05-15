@@ -44,7 +44,7 @@ class SiameseFC:
         recorder = getDataset.record()
         loss = tf.keras.losses.BinaryCrossentropy(from_logits=True)
         optimizer = tf.keras.optimizers.Nadam(learning_rate=lr)
-        self.model.compile(loss=loss, optimizer=optimizer, metrics=["accuracy"])
+        self.model.compile(loss=loss, optimizer=optimizer, metrics=["accuracy", "auc"])
         tensorboard_callback = tf.keras.callbacks.TensorBoard(TENSORBOARD_DIR, histogram_freq=1,
                                                               update_freq=100,
                                                               profile_batch=0)
